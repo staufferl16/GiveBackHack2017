@@ -1,0 +1,72 @@
+<h1 class="app-name">{{title}}</h1>
+<br class="panel panel-default">
+    <div class="input-group-full-name">
+        <div class="input-group">
+            <span class="input-group-addon" id="first-name">First Name</span>
+            <input type="text" [(ngModel)]="formUser.name.firstName" class="form-control" placeholder="First Name">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="middle-name">Middle Name</span>
+            <input type="text" [(ngModel)]="formUser.name.middleName" class="form-control" placeholder="Middle Name">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="last-name">Last Name</span>
+            <input type="text" [(ngModel)]="formUser.name.lastName" class="form-control" placeholder="Last Name">
+        </div>
+    </div>
+    <div class="input-group-full-address">
+        <div class="input-group">
+            <span class="input-group-addon" id="address-line-1">Street Number and Name</span>
+            <input type="text" [(ngModel)]="formUser.address.streetNumberAndName" class="form-control" placeholder="Street Number and Name">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="apartment-number">Apartment Number</span>
+            <input type="text" [(ngModel)]="formUser.address.apartmentNumber" class="form-control" placeholder="Apartment Number">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="city">City</span>
+            <input type="text" [(ngModel)]="formUser.address.city" class="form-control" placeholder="City">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="state">State</span>
+            <input type="text" [(ngModel)]="formUser.address.state" class="form-control" placeholder="State">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="zip">Zip Number</span>
+            <input type="text" [(ngModel)]="formUser.address.zip" class="form-control" placeholder="Zip Number">
+        </div>
+        <h2>Apartment Type</h2>
+            <div>
+            <select class="form-control" [(ngModel)]="formUser.address.apartmentType">
+                <option *ngFor="let aptOption of apartmentOptions" [value]="aptOption">{{aptOption}}</option>
+            </select>
+            </div>
+    </div>
+    <div class="renewal-confirmation">
+        <h2>Exclusion or Deportation Proceedings Status</h2>
+        <span class="input-group-addon">
+            <select class="form-control" [(ngModel)]="formUser.removalProceedings">
+                <option *ngFor="let option of statusOrOutcomeOptions" [value]="option">{{option}}</option>
+            </select>
+        </span>
+        <h2>Initial Filing or Renewal?</h2>
+        <span class="input-group-addon">
+            <select class="form-control" [(ngModel)]="formUser.requestType">
+                <option *ngFor="let reqOption of requestTypeOptions" [value]="reqOption">{{reqOption}}</option>
+            </select>
+        </span>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="date-of-proceedings">Date of Proceedings</span>
+        <input type="text" [(ngModel)]="formUser.dateOfProceedings" class="form-control" placeholder="Date of Proceedings">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="most-recent-renewal">Most Recent Renewal</span>
+        <input type="text" [(ngModel)]="formUser.mostRecentRenewal" class="form-control" placeholder="mm/dd/yyyy">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="location">Location of Proceedings</span>
+        <input type="text" [(ngModel)]="formUser.locationOfProceedings" class="form-control" placeholder="Location Of Proceedings">
+    </div>>
+    <p></p>
+    <button (click)="sendDacaUser()">Send Info</button>

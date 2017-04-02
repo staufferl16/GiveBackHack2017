@@ -1,0 +1,24 @@
+/* Master Styles */
+h1 {
+  color: #009fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2, h3 {
+  color: #009fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  background-color: #ffffff;
+  margin: 2em;
+}
+body, input[text], button {
+  color: #002f9f;
+  font-family: Arial, Helvetica, serif;
+}
+/* . . . */
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
